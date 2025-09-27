@@ -1,90 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astralfn</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstralFN</title>
+  
+  <!-- Meta Tags -->
+  <meta property="og:title" content="AstralFN" />
+  <meta property="og:description" content="" />
 
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Astral" />
-    <meta property="og:description" content="" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300&display=swap" rel="stylesheet" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/particles.css" media="screen" />
+  <!-- Font Awesome -->
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/9105e9014d.js"></script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/IMG_0169.png" />
+  <!-- Styles -->
+  <style>
+    :root {
+      --primary-color: #ffffff;
+      --background-color: #101010;
+      --accent-color: #be3cff;
+      --modal-background: rgba(0, 0, 0, 0.7);
+    }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet" />
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Font Awesome -->
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/9105e9014d.js"></script>
+    body {
+      font-family: 'Mulish', sans-serif;
+      background-color: var(--background-color);
+      color: var(--primary-color);
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    /* Video Background */
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(4px);
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    /* Particles Container (if used) */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Center Content */
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 1rem;
+      max-width: 90%;
+    }
+
+    .center h1 {
+      font-size: 5rem;
+      font-weight: 200;
+      margin-bottom: 1rem;
+    }
+
+    .center p {
+      font-size: 1.5rem;
+      font-weight: 200;
+      margin: 0.5rem 0;
+    }
+
+    .skush {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    /* Buttons */
+    .buttons {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid #fff;
+      border-radius: 30px;
+      background: transparent;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .btn i {
+      margin-right: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: #fff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--modal-background);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 2rem;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal__content {
+      background: #000;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal__title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    /* Footer / Bottom Text */
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .center h1 {
+        font-size: 3rem;
+      }
+      .center p {
+        font-size: 1.2rem;
+      }
+      .modal__title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Background Video -->
-    <video autoplay muted loop id="video-background" playsinline>
-        <source src="assets/vids/videoplayback.mp4" type="video/mp4" />
-        Your browser does not support HTML5 video.
-    </video>
+  <!-- Video Background -->
+  <video id="video-background" autoplay muted loop playsinline>
+    <source src="assets/vids/videoplayback.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
 
-    <!-- Particles.js container -->
-    <div id="particles-js"></div>
+  <!-- Particles.js (Optional) -->
+  <div id="particles-js"></div>
 
-    <!-- Modal Structure -->
-    <div class="modal" id="modal">
-        <div class="modal__container">
-            <div class="modal__content">
-                <h1 class="modal__title">click</h1>
-            </div>
-            <i id="close" class="fas fa-times" aria-hidden="true" onclick="closeModal()"></i>
-        </div>
+  <!-- Main Content -->
+  <div class="center">
+    <h1>AstralFN</h1>
+    <p>OGFN for free!!!</p>
+    <p class="skush">Getting better Every Day!!!</p>
+    <p class="skush">Multiplayer + and more!!!</p>
+    <div class="buttons">
+      <a href="https://discord.gg/astralfn" class="btn" aria-label="Join our Discord">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+      <a href="https://m.youtube.com/@AstralOGFN" class="btn" aria-label="Visit YouTube Channel">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
     </div>
+  </div>
 
-    <!-- Main Content -->
-    <div class="center">
-        <h1>Astral</h1>
-        <p>OGFN for free!!!</p>
-        <p class="skush">Getting better Every Day!!!</p>
-        <p class="skush">Multiplayer + and more!!!</p>
-        <div class="btn">
-            <a href="https://discord.gg/astralfn" class="btn-link">
-                <p class="btns"><i class="fa-brands fa-discord"></i> Discord</p>
-            </a>
-            <a href="https://m.youtube.com/@AstralOGFN" class="btn-link">
-                <p class="btns"><i class="fa-brands fa-youtube"></i> YouTube</p>
-            </a>
-        </div>
+  <!-- Modal -->
+  <div class="modal" id="infoModal">
+    <div class="modal__content">
+      <button class="close-btn" id="closeModal" aria-label="Close">&times;</button>
+      <h2 class="modal__title">Welcome to AstralFN</h2>
+      <p>Click anywhere to learn more!</p>
     </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/particles.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/custom.js"></script>
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2024 AstralFN | <a href="#" style="color:#ccc; text-decoration:underline;">Privacy Policy</a>
+  </div>
 
-    <script>
-        // Function to play the video and unmute
-        function playVideo() {
-            const video = document.getElementById("video-background");
-            video.play();
-            video.muted = false;
-            video.volume = 0.3;
-            console.log("Playing video");
+  <!-- Scripts -->
+  <script>
+    // Show modal on load or trigger
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('infoModal');
+      const closeBtn = document.getElementById('closeModal');
+
+      // Show modal after 1 sec
+      setTimeout(() => {
+        modal.classList.add('show');
+      }, 1000);
+
+      // Close modal
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+      });
+
+      // Optional: close modal on background click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
         }
-
-        // Function to close modal
-        function closeModal() {
-            const modal = document.getElementById("modal");
-            modal.style.display = "none";
-        }
-
-        // Example: open modal on some event (if needed)
-        // document.getElementById('someButton').addEventListener('click', () => {
-        //     document.getElementById('modal').style.display = 'block';
-        // });
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>
