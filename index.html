@@ -1,165 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fortnite Official</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0d0d0d;
-            color: #fff;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FluxFN - Fortnite</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+  }
 
-        header {
-            background-color: #1a1a1a;
-            padding: 20px;
-            text-align: center;
-        }
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000;
+  }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #00ffcc;
-        }
+  header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #fff;
+  }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
+  nav {
+    display: flex;
+    gap: 15px;
+  }
 
-        nav a {
-            color: #fff;
-            padding: 14px 20px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-        nav a:hover {
-            background-color: #575757;
-        }
+  /* Banner / Hero image */
+  .hero {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1612644557543-3701e2b8cc94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); /* Replace with your own image or URL */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+  }
 
-        .section {
-            margin-bottom: 40px;
-        }
+  .overlay h2 {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+    color: #ffff00;
+  }
 
-        .section h2 {
-            color: #00ffcc;
-            border-bottom: 2px solid #00ffcc;
-            padding-bottom: 10px;
-        }
+  .btn {
+    background-color: #ffff00;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
 
-        .featured {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+  .btn:hover {
+    background-color: #cccc00;
+  }
 
-        .card {
-            background-color: #222;
-            border-radius: 8px;
-            overflow: hidden;
-            flex: 1 1 300px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
+  /* Pricing / Features section */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 20px;
+    gap: 20px;
+  }
 
-        .card img {
-            width: 100%;
-            height: auto;
-        }
+  .card {
+    background-color: #333;
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
 
-        .card-content {
-            padding: 15px;
-        }
+  .card h3 {
+    margin-top: 0;
+    color: #ffff00;
+  }
 
-        footer {
-            background-color: #1a1a1a;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-        }
+  .price {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
 
-        /* Add responsive design */
-        @media(max-width: 768px){
-            nav {
-                flex-direction: column;
-            }
-            .featured {
-                flex-direction: column;
-            }
-        }
-    </style>
+  /* Footer */
+  footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+  }
+
+  /* Responsive styles */
+  @media(max-width: 768px){
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Fortnite</h1>
-    </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">News</a>
-        <a href="#">Battle Pass</a>
-        <a href="#">Events</a>
-        <a href="#">Shop</a>
-        <a href="#">Community</a>
-    </nav>
+<header>
+  <h1>FORTNITE</h1>
+  <nav>
+    <a href="#">GET FLUX</a>
+    <a href="#">NEWS</a>
+  </nav>
+</header>
 
-    <main>
-        <section class="section" id="featured">
-            <h2>Featured</h2>
-            <div class="featured">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1612644557543-3701e2b8cc94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fortnite Skins" />
-                    <div class="card-content">
-                        <h3>New Skins</h3>
-                        <p>Explore the latest Fortnite skins and customize your character.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1627525501764-4d0b0b6f1b3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fortnite Battle" />
-                    <div class="card-content">
-                        <h3>Battle Royale</h3>
-                        <p>Join the fight and prove your skills in the ultimate battle.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1612768774480-89f8d8c2e3b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fortnite Events" />
-                    <div class="card-content">
-                        <h3>Upcoming Events</h3>
-                        <p>Don't miss the latest Fortnite events happening now.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="hero">
+  <div class="overlay">
+    <h2>PLAY FREE NOW</h2>
+    <a href="#" class="btn">Download</a>
+  </div>
+</div>
 
-        <section class="section" id="news">
-            <h2>Latest News</h2>
-            <p>Stay updated with the newest updates, patches, and announcements from Fortnite.</p>
-        </section>
+<section class="features">
+  <div class="card">
+    <h3>BATTLE ROYALE</h3>
+    <div class="price">FREE</div>
+    <p>Join the battle and compete with players worldwide.</p>
+  </div>
+  <div class="card">
+    <h3>STARTER PACK</h3>
+    <div class="price">$5.99</div>
+    <p>Get your starter pack with skins and items.</p>
+  </div>
+  <div class="card">
+    <h3>OG DONATOR</h3>
+    <div class="price">$9.99</div>
+    <p>Support and get exclusive rewards.</p>
+  </div>
+  <div class="card">
+    <h3>FULL LOCKER</h3>
+    <div class="price">$17.99</div>
+    <p>Unlock all skins and cosmetics.</p>
+  </div>
+</section>
 
-        <section class="section" id="shop">
-            <h2>Shop</h2>
-            <p>Purchase the latest skins, emotes, and items to enhance your gameplay.</p>
-        </section>
+<footer>
+  &copy; 2024 FluxFN. All rights reserved.
+</footer>
 
-        <section class="section" id="community">
-            <h2>Community</h2>
-            <p>Join forums, tournaments, and social media to connect with other Fortnite players.</p>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2024 Fortnite. All rights reserved.
-    </footer>
 </body>
 </html>
